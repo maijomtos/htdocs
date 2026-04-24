@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #D32F2F; /* SWU Red-ish / Primary brand */
+    --primary-hover: #b71c1c;
+    --bg-gradient-start: #1c1c24; /* Sleek dark mode */
+    --bg-gradient-end: #2a2a35;
+    --text-main: #f0f0f5;
+    --text-muted: #a0a0ab;
+    --card-bg: rgba(45, 45, 55, 0.6);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --glass-blur: blur(16px);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(28, 28, 36, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--card-border);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #fff, #ff7e7e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links .btn-login {
+    background: var(--primary-color);
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-links .btn-login:hover {
+    background: var(--primary-hover);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+}
+
+/* Main Content Area */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #fff, #ffd0d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 20px rgba(211, 47, 47, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(211, 47, 47, 0.5);
+    background: var(--primary-hover);
+}
+
+.hero-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glassmorphism Card for aesthetic */
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Login Form Styles */
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.login-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.2);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+}
+
+.error-msg {
+    color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.1);
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(255, 77, 77, 0.3);
+}
+
+/* Background blob decorations */
+.blob-1 {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.blob-2 {
+    position: absolute;
+    bottom: -100px;
+    left: -50px;
+    width: 250px;
+    height: 250px;
+    background: #4B0082;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text p {
+        margin: 0 auto 2rem;
+    }
+    .navbar {
+        padding: 1.5rem 2rem;
+    }
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+}
